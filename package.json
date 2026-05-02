@@ -75,7 +75,7 @@
     "rehype-katex": "^6.0.2",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
-    "uuid": "^9.0.0",
+    "uuid": "^14.0.0",
     "yjs": "^13.6.6",
     "zustand": "^4.3.6"
   },
