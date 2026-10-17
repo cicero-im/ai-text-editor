@@ -1,14 +1,13 @@
-import React from 'react';
-
-import { Renew } from '@carbon/icons-react';
-import BaseButton from './BaseButton';
+import { Renew } from "@carbon/icons-react";
+import type React from "react";
+import BaseButton from "./BaseButton";
 
 const RefreshButton = ({
-  onClick,
+	onClick,
 }: {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+	onClick: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
-  return <BaseButton icon={<Renew />} onClick={onClick} />;
+	return <BaseButton icon={<Renew />} onClick={onClick} />;
 };
 
 export default RefreshButton;

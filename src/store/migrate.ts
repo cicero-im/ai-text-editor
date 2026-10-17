@@ -1,24 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';
-
-import {
-  Folder,
-  FolderCollection,
-  LocalStorageInterfaceV0ToV1,
-  LocalStorageInterfaceV1ToV2,
-  LocalStorageInterfaceV2ToV3,
-  LocalStorageInterfaceV3ToV4,
-  LocalStorageInterfaceV4ToV5,
-  LocalStorageInterfaceV5ToV6,
-  LocalStorageInterfaceV6ToV7,
-  LocalStorageInterfaceV7oV8,
-} from '@type/document';
-import {
-  _defaultChatConfig,
-  defaultModel,
-  defaultUserMaxToken,
-} from '@constants/chat';
-import { officialAPIEndpoint } from '@constants/auth';
-import defaultPrompts from '@constants/prompt';
+// Empty export to make this file a module
+export {};
 
 // export const migrateV0 = (persistedState: LocalStorageInterfaceV0ToV1) => {
 //   persistedState.chats.forEach((chat) => {

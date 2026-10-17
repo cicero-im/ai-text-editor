@@ -1,4 +1,4 @@
-import { LocalStorageInterfaceV7oV8 } from './document';
+import type { LocalStorageInterfaceV7oV8 } from "./document";
 
 interface PersistStorageState extends LocalStorageInterfaceV7oV8 {}
 

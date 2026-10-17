@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - '@carbon/icon-helpers'
+  - '@carbon/icons'
+  - '@carbon/icons-react'
+  - '@swc/core'
+  - core-js
+  - core-js-pure
+  - electron
+  - esbuild
