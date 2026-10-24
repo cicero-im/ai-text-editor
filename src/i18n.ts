@@ -1,29 +1,29 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-import Backend from 'i18next-http-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from "i18next-http-backend";
+import { initReactI18next } from "react-i18next";
 
 const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || undefined;
 
-const namespace = ['main', 'api', 'about', 'model'];
-if (googleClientId) namespace.push('drive');
+const namespace = ["main", "api", "about", "model"];
+if (googleClientId) namespace.push("drive");
 
 i18n
-  .use(Backend)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    backend: {
-      loadPath: 'locales/{{lng}}/{{ns}}.json',
-    },
-    fallbackLng: {
-      default: ['en'],
-    },
-    load: 'languageOnly', // This ensures i18next ignores region codes
-    ns: namespace,
-    defaultNS: 'main',
-    supportedLngs: ['en'],
-  });
+	.use(Backend)
+	.use(LanguageDetector)
+	.use(initReactI18next)
+	.init({
+		backend: {
+			loadPath: "locales/{{lng}}/{{ns}}.json",
+		},
+		fallbackLng: {
+			default: ["en"],
+		},
+		load: "languageOnly", // This ensures i18next ignores region codes
+		ns: namespace,
+		defaultNS: "main",
+		supportedLngs: ["en"],
+	});
 
 export default i18n;

@@ -1,41 +1,41 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { debounce } from 'lodash';
-import useStore from '@store/store';
-
-import SearchBar from '@components/SearchBar';
+import SearchBar from "@components/SearchBar";
+import useStore from "@store/store";
+import { debounce } from "lodash";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 const DocumentSearch = ({
-  filter,
-  setFilter,
+	filter,
+	setFilter,
 }: {
-  filter: string;
-  setFilter: React.Dispatch<React.SetStateAction<string>>;
+	filter: string;
+	setFilter: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const [_filter, _setFilter] = useState<string>(filter);
-  const generating = useStore((state) => state.generating);
+	const [_filter, _setFilter] = useState<string>(filter);
+	const generating = useStore((state) => state.generating);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    _setFilter(e.target.value);
-  };
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		_setFilter(e.target.value);
+	};
 
-  const debouncedUpdateFilter = useRef(
-    debounce((f) => {
-      setFilter(f);
-    }, 500)
-  ).current;
+	const debouncedUpdateFilter = useRef(
+		debounce((f) => {
+			setFilter(f);
+		}, 500),
+	).current;
 
-  useEffect(() => {
-    debouncedUpdateFilter(_filter);
-  }, [_filter]);
+	useEffect(() => {
+		debouncedUpdateFilter(_filter);
+	}, [_filter, debouncedUpdateFilter]);
 
-  return (
-    <SearchBar
-      value={_filter}
-      handleChange={handleChange}
-      className='h-10 mb-2'
-      disabled={generating}
-    />
-  );
+	return (
+		<SearchBar
+			value={_filter}
+			handleChange={handleChange}
+			className="h-10 mb-2"
+			disabled={generating}
+		/>
+	);
 };
 
 export default DocumentSearch;
